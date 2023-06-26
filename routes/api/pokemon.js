@@ -11,7 +11,7 @@ const itemValidations = require('../../validations/items');
 
 const router = express.Router();
 
-router.get('/', asyncHandler(async function(_req, res) {
+router.get('/', asyncHandler(async function(req, res) {
   const pokemon = await PokemonRepository.list();
   return res.json(pokemon);
 }));
@@ -35,11 +35,11 @@ router.put(
   })
 );
 
-router.get('/types', asyncHandler(async function (_req, res) {
+router.get('/types', asyncHandler(async function (req, res) {
   return res.json(types);
 }));
 
-router.get('/random', asyncHandler(async function(_req, res){
+router.get('/random', asyncHandler(async function(req, res){
   const pokemon = await PokemonRepository.random();
   return res.json(pokemon);
 }));
